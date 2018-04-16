@@ -1,0 +1,70 @@
+<!DOCTYPE html >
+
+{% extends "index.html" %}
+
+
+
+<html>
+<meta charset="utf-8">
+
+
+
+
+{% block content %}
+
+
+
+<form action='' method="POST">
+    {{ form.hidden_tag() }}
+  <div class="form-row">
+    <div >
+       {{ form.VEHICLE_ID.label }}
+       {{ form.VEHICLE_ID(size=32) }}
+       {% for error in form.VEHICLE_ID.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+
+    </div>
+    <div >
+      {{ form.TOTAL_NO_OF_AXELS.label }}
+      {{ form.TOTAL_NO_OF_AXELS(size=32) }}
+
+    </div>
+    <div >
+      {{ form.NO_OF_DRIVE_AXELS.label }}
+      {{ form.NO_OF_DRIVE_AXELS(size=32) }}
+
+    </div>
+    <div >
+      {{ form.TRANSMISSION_TYPE.label }}
+      {{ form.TRANSMISSION_TYPE(size=32) }}
+
+    </div>
+    <div>
+      {{ form.SPEEDS.label }}
+      {{ form.SPEEDS(size=32) }}
+
+    </div>
+    <div >
+      {{ form.MANUFACTURER.label }}
+      {{ form.MANUFACTURER(size=32) }}
+
+    </div>
+    <div>
+      {{ form.HYBRID_TECH.label }}
+      {{ form.HYBRID_TECH }}
+
+    </div>
+    <div>
+      {{ form.HYBRID_TECH_COMMENTS.label }}
+      {{ form.HYBRID_TECH_COMMENTS(size=32) }}
+    </div>
+
+
+  </div>
+  <button type="submit" class="btn btn-primary">{{ form.submit() }}</button>
+</form>
+
+
+{% endblock %}
+</html>

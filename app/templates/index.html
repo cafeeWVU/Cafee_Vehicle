@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+<h1>Hi, {{ current_user.username }}!</h1>
+{% block body %}
+
+{% block navbar %}
+<div class="navbar ">
+
+
+
+    <nav class="navbar" margin:0>
+      <div class="pull-right" margin:0>
+        <ul class="nav navbar-nav" margin:0>
+            <li><button type="submit"  class="btn navbar-btn btn-danger" name="logout" id="logout"  value="Log Out"><a href = {{ url_for('logout') }}>Log Out </a></button></li>
+        </ul>
+</div>
+      <ul class='nav nav-bar nav-pills navbar-expand-lg navbar-default navbar-dark bg-primary ' style='background-color: #151B54' margin-bottom:0>
+        <li><a href="{{ url_for('vehicle') }}">Vehicle</a></li>
+        <li><a href="{{ url_for('engine') }}">Engine</a></li>
+        <li><a href="{{ url_for('transmission') }}">Transmission</a></li>
+        <li><a href="{{ url_for('owner') }}">Owner</a></li>
+        <li><a href="{{ url_for('vehiclesearch') }}">Search</a></li>
+      </ul>
+
+    </nav>
+    <!-- ... -->
+  </div>
+  {% endblock %}
+    <!-- navbar -->
+    {%block content%}
+    {%endblock%}
+{% endblock %}

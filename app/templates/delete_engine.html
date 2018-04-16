@@ -1,0 +1,124 @@
+<!DOCTYPE html >
+
+{% extends "index.html" %}
+
+
+
+<html>
+<meta charset="utf-8">
+
+
+
+
+{% block content %}
+
+
+
+<form action='' method="POST">
+    {{ form.hidden_tag() }}
+  <div class="form-row">
+    <div >
+       {{ form.VEHICLE_ID.label }}
+       {{ form.VEHICLE_ID(size=32) }}
+       {% for error in form.VEHICLE_ID.errors %}
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+
+    </div>
+    <div >
+      {{ form.MANUFACTURER.label }}
+      {{ form.MANUFACTURER(size=32) }}
+
+    </div>
+    <div >
+      {{ form.ENGINE_MODEL.label }}
+      {{ form.ENGINE_MODEL(size=32) }}
+
+    </div>
+    <div >
+      {{ form.ENGINE_YEAR.label }}
+      {{ form.ENGINE_YEAR(size=32) }}
+
+    </div>
+    <div>
+      {{ form.SERIAL.label }}
+      {{ form.SERIAL(size=32) }}
+      {% for error in form.SERIAL.errors %}
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+
+    </div>
+    <div >
+      {{ form.EPA_FAMILY_CERT.label }}
+      {{ form.EPA_FAMILY_CERT(size=32) }}
+
+    </div>
+    <div>
+      {{ form.DISPLACEMENT.label }}
+      {{ form.DISPLACEMENT(size=32) }}
+
+    </div>
+    <div>
+      {{ form.NUMBER_OF_CYLINDERS.label }}
+      {{ form.NUMBER_OF_CYLINDERS(size=32) }}
+    </div>
+
+      <div>
+        {{ form.CONFIGURATION.label }}
+        {{ form.CONFIGURATION(size=32) }}
+
+      </div>
+      <div>
+        {{ form.IDLE_SPEED.label }}
+        {{ form.IDLE_SPEED(size=32) }}
+
+      </div>
+      <div>
+        {{ form.GOVERNED_SPEED.label }}
+        {{ form.GOVERNED_SPEED(size=32) }}
+
+      </div>
+      <div >
+        {{ form.HIGH_IDLE.label }}
+        {{ form.HIGH_IDLE(size=32) }}
+
+      </div>
+      <div >
+        {{ form.REFERENCE_TORQUE.label }}
+        {{ form.REFERENCE_TORQUE(size=32) }}
+
+      </div>
+      <div >
+        {{ form.ENGINE_REBUILT.label }}
+        {{ form.ENGINE_REBUILT(size=32) }}
+
+      </div>
+      <div >
+        {{ form.YEAR_OF_REBUILT.label }}
+        {{ form.YEAR_OF_REBUILT(size=32) }}
+
+      </div>
+      <div >
+        {{ form.ECU_PROTOCOL.label }}
+        {{ form.ECU_PROTOCOL(size=32) }}
+
+      </div>
+      <div >
+        {{ form.STOIC_LEAN_BURN.label }}
+        {{ form.STOIC_LEAN_BURN(size=32) }}
+
+      </div>
+      <div >
+        {{ form.PRIMARY_FUEL_TYPE.label }}
+        {{ form.PRIMARY_FUEL_TYPE(size=32) }}
+
+      </div>
+
+
+  </div>
+  <button type="submit" class="btn btn-primary">{{ form.submit() }}</button>
+</form>
+
+
+{% endblock %}
+</html>

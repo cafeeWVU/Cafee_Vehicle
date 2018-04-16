@@ -1,0 +1,26 @@
+
+td, th {
+  border: solid 0px black;
+  border-left: solid 0px black;
+
+}
+
+.no-border {
+  border-left: none;
+}
+
+tr {
+  border-bottom: solid 0px black;
+}
+
+.border-side {
+  border-left: solid 0px black;
+}
+
+.border {
+  border: solid 0px black;
+}
+
+table {
+  border-collapse: collapse;
+}

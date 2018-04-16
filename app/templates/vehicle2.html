@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.VEHICLE_ID.label }}<br>
+        {{ form.VEHICLE_ID(size=32) }}<br>
+        {% for error in form.id.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.VEHICLE_TYPE.label }}<br>
+        {{ form.VEHICLE_TYPE(size=32) }}<br>
+
+    </p>
+    <p>
+        {{ form.CABIN_TYPE.label }}<br>
+        {{ form.CABIN_TYPE(size=32) }}<br>
+
+    </p>
+    <p>
+        {{ form.MANUFACTURER.label }}<br>
+        {{ form.MANUFACTURER(size=32) }}<br>
+
+    </p>
+    <p>
+        {{ form.vin.label }}<br>
+        {{ form.vin(size=32) }}<br>
+
+    </p>
+
+
+    <p>{{ form.submit() }}</p>
+</form>
+
+{% endblock %}

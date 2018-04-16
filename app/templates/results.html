@@ -1,0 +1,14 @@
+
+{%extends 'base.html'%}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='tablestyle.css')}}">
+{% endblock %}
+{%block body%}
+
+<doctype html>
+<title>Search Results - Vehicle Database</title>
+<h1> Results </h1>
+{{table}}
+{%endblock%}

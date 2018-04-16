@@ -1,0 +1,122 @@
+<!DOCTYPE html >
+
+{% extends "index.html" %}
+
+
+
+<html>
+<meta charset="utf-8">
+
+
+
+
+{% block content %}
+
+
+
+<form class="form " action='/vehicle' method="POST">
+    {{ form.hidden_tag() }}
+  <div class="form-group">
+    <div class = 'form-row'>
+    <div >
+       {{ form.VEHICLE_ID.label }}
+       {{ form.VEHICLE_ID(size=32) }}
+       {% for error in form.VEHICLE_ID.errors %}
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+    </div>
+
+    <div >
+      {{ form.VEHICLE_TYPE.label }}
+      {{ form.VEHICLE_TYPE(size=32) }}
+
+    </div>
+  </div>
+  <div class = 'form-row'>
+    <div >
+      {{ form.CABIN_TYPE.label }}
+      {{ form.CABIN_TYPE(size=32) }}
+
+    </div>
+    <div>
+      {{ form.MANUFACTURER.label }}
+      {{ form.MANUFACTURER(size=32) }}
+
+    </div>
+  </div>
+  <div class = 'form-row'>
+    <div >
+      {{ form.MODEL.label }}
+      {{ form.MODEL(size=32) }}
+
+    </div>
+    <div>
+      {{ form.MODEL_YEAR.label }}
+      {{ form.MODEL_YEAR(size=32) }}
+
+    </div>
+  </div>
+  <div class='form-row'>
+    <div>
+      {{ form.VIN.label }}
+      {{ form.VIN(size=32) }}
+      {% for error in form.VIN.errors %}
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+    </div>
+
+      <div>
+        {{ form.GVWR.label }}
+        {{ form.GVWR(size=32) }}
+
+      </div>
+    </div>
+    <div class = 'form-row'>
+      <div>
+        {{ form.TOTAL_MILES.label }}
+        {{ form.TOTAL_MILES(size=32) }}
+        {% for error in form.TOTAL_MILES.errors %}
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+      </div>
+      <div>
+        {{ form.AGENCY_VEHICLE_NUMBER.label }}
+        {{ form.AGENCY_VEHICLE_NUMBER(size=32) }}
+
+      </div>
+    </div>
+    <div class = 'form-row'>
+      <div >
+        {{ form.LICENSE_PLATE.label }}
+        {{ form.LICENSE_PLATE(size=32) }}
+        {% for error in form.LICENSE_PLATE.errors %}
+         <span style="color: red;">[{{ error }}]</span>
+         {% endfor %}
+
+      </div>
+      <div >
+        {{ form.OEM_COMMENTS.label }}
+        {{ form.OEM_COMMENTS(size=32) }}
+
+      </div>
+    </div>
+    <div class = 'form-row'>
+      <div >
+        {{ form.AQMD_CATEGORY.label }}
+        {{ form.AQMD_CATEGORY(size=32) }}
+
+      </div>
+      <div >
+        {{ form.EMA_CATEGORY.label }}
+        {{ form.EMA_CATEGORY(size=32) }}
+
+      </div>
+    </div>
+
+  </div>
+  <button type="submit" class="btn btn-primary">{{ form.submit() }}</button>
+</form>
+
+
+{% endblock %}
+</html>
