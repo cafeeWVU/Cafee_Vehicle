@@ -1,8 +1,8 @@
-from flask_wtf import FlaskForm, Form
+from flask_wtf import  Form
 from wtforms import StringField, PasswordField,BooleanField, SubmitField, IntegerField, SelectField, BooleanField
 from wtforms.validators import DataRequired
 
-class VehicleForm(FlaskForm):
+class VehicleForm(Form):
     VEHICLE_ID =  StringField('Vehicle ID',validators=[DataRequired()])
     VEHICLE_TYPE = StringField('Vehicle TYPE')
     CABIN_TYPE =  StringField('Cabin Type')
@@ -25,12 +25,12 @@ class SearchForm(FlaskForm):
     select = SelectField('Search for Vehicle Information:', choices=choices)
     search = StringField('')
 
-class LoginForm(FlaskForm):
+class LoginForm(Form):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Sign In')
 
-class EngineForm(FlaskForm):
+class EngineForm(Form):
     VEHICLE_ID =  StringField('Vehicle ID',validators=[DataRequired()])
     MANUFACTURER = StringField('Manufacturer')
     ENGINE_MODEL =  StringField('Engine Model')
@@ -53,7 +53,7 @@ class EngineForm(FlaskForm):
 
     submit = SubmitField('Save')
 
-class TransmissionForm(FlaskForm):
+class TransmissionForm(Form):
     VEHICLE_ID =  StringField('Vehicle ID',validators=[DataRequired()])
     TOTAL_NO_OF_AXELS = StringField('Total No Of Axels')
     NO_OF_DRIVE_AXELS =  StringField('No Of Drive Axels')
@@ -67,7 +67,7 @@ class TransmissionForm(FlaskForm):
 
     submit = SubmitField('Save')
 
-class OwnerForm(FlaskForm):
+class OwnerForm(Form):
     VEHICLE_ID =  StringField('Vehicle ID',validators=[DataRequired()])
     FLEET_OWNER = StringField('Fleet Owner')
     CONTACT_PERSON =  StringField('Contact Person')
